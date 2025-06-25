@@ -9,7 +9,7 @@ print_help() {
   echo "format.sh"
   echo ""
   echo "${BOLD}NAME${NORMAL}"
-  echo "    format.sh - A tool for formatting C++ files using clang-format"
+  echo "    format.sh - A wrapper for formatting C++ files using clang-format"
   echo ""
   echo "${BOLD}SYNOPSIS${NORMAL}"
   echo "    format.sh [filename | help]"
@@ -29,11 +29,8 @@ if [[ $1 == "help" ]]; then
 fi
 
 
-EXPECTED_ARGS_DIR=2
 EXPECTED_ARGS_FILE=1
-if [[ $1 == "-d" && $# == $EXPECTED_ARGS_DIR ]]; then
-    clang-format -i -- $2/**.cpp 
-elif [[ $# == $EXPECTED_ARGS_FILE ]]; then
+if [[ $# == $EXPECTED_ARGS_FILE ]]; then
     clang-format -i $1
 else
   print_help 1
