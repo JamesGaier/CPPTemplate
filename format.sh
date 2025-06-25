@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# this cli is super simple it only expects one argument which is the filename and assumes you want inplace formatting
-
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 
